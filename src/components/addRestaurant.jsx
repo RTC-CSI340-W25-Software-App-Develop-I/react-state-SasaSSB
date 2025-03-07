@@ -1,22 +1,21 @@
-import { useState } from 'react'
+import { useState } from "react";
 function AddRestaurant({ updateRestaurants }) {
   const [formData, setFormData] = useState({
     name: "",
     address: "",
     phone: "",
     cuisine: "",
-    rating: ""
+    rating: "",
   });
-
   const handleChange = (e) => {
-    const name = e.target.name
-    const value = e.target.value
+    const name = e.target.name;
+    const value = e.target.value;
     setFormData({ ...formData, [name]: value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData)
-    updateRestaurants(formData)
+    console.log(formData);
+    updateRestaurants(formData);
   };
 
   return (
@@ -81,8 +80,6 @@ function AddRestaurant({ updateRestaurants }) {
       <button type="submit">Submit</button>
     </form>
   );
-
-
 }
 
 export default AddRestaurant;
